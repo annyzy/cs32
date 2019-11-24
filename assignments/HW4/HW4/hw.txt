@@ -1,0 +1,16 @@
+2. there is no "<"  custom comparison operator in the findAtLeast function that compare the two values that Coord class insert in, we need to defined another comparison operator for Coord class;
+
+3b. In each recursive call, it only remember the content of the current parameter which passes in. In addition, both the return types of both functions are void, so there is no return value. Therefore, we need to use a helper function that contain one more parameter that record the "name" in each of the recursive call to string path;
+
+4a. O(N^3); because the most outest for loop run N iterations. The first inner loop run N iterations, then the second inner loop nested in the first inner loop run N iterations. Therefore, the totally is N*N*N. 
+
+4b. O(N^3); because the most outest loop run N iterations. In the first inner loop with N, it takes N iterations. Finally, the last inner loop run N iterations. Therefore, the totally is N*N*N which is N^3.
+
+5a. In order to find the worst case time complexity, we count the steps that take the most time. The else if(&result == &set2)takes N iterations. The for loop take N*N iterations. Therefore, the time complexity is O(N^2). 
+
+5b. O(N*logN); Combining the iterations for each term is N+N+NlogN+N+2N, and we take NlogN. Inserting p1 and p2 node value take a total of O(2N). The time complexity for sorting v is given as O(NlogN). Deleting result nodes takes O(N). The for loop takes 2N iterations to copy unique items from v to result.
+
+5c. In oder to find the worst case, chose the path that takes the most iterations.
+There are two sets and we traverse every value in the two sets, which is O(1), and then we inserting p2 value take N iterations. Therefore, the total is 2N*O(N) and the time complexity is O(N). 
+
+
