@@ -1,0 +1,61 @@
+1. 
+I pass all the tests that the spec provided on both g32 and Xcode, even though it takes few minutes to load files. So i believe there is no bugs or other problems.
+
+2.
+I highly followed the spec instructions and each step to implement each method, so i think i satisfied the big-O requirements for each method that the spec required.
+
+3.
+Trie's find method:
+
+Trie's find
+	return a root pointer that points to the find method that i created for the Node
+
+Node's find
+	if the string key is empty, return the value type values
+	else (for each children in a node)
+		check if it's first label match the first character in the key
+			if it's
+				call the helper find function to deal with the rest of the 				character in the key
+		if the first label does not match the first character in the key 
+			return a vector of valuetype which construct nothing
+Node's helperfind
+	if the key is empty
+		return the values
+	create a vector of valuetype called foundResult to the found value
+	for each children
+		create a vector of valueType called found 
+		if the first label match the first character of the key
+			then recursively call itself which look at the rest of the            			string and put the value to the found
+		if the first label does not match the first character of the key 
+			if it is exactmachonly
+				do not put anything in the found
+			else
+			then recursively call itself which look at the rest of the            			string in the condition of exactlymachonly can only be truenand 			put the value to the found
+		insert the found to the begin to the end
+	return the found result
+
+
+GenomeMatcher's findGenomesWithThisDNA() method
+if the fragment size smaller than minimunlength or the minimumlenghh smaller than minimumSearchLength
+	return false;
+clear the vector of DNAMatch;
+
+assign the fragKey from the fragment which passes in with the minimumsearchlenght;
+
+find the fragKey that satisfied the exactMatchOnly in the tries and out them into a a collection of the candidated memberInfo;
+
+create a unordered map to match each name with it associate DNAMatch
+iterate through each member in a collection of candidates
+		extract the memberSegment that with the shorter in the Genome class
+		check each character in the memberSegment with the fragment character to 		find the longest matching length with the exactmatchonly
+		then we check if the memberSegment that we found has been found before
+			compare the memberSegment's length with the existed one and keep 			the longer one
+			store the memberSegment if it is the first time i found
+iterate through each member in the unordered map and store the value to the matches
+if the matches is empty, return false
+otherwise, return true; 
+
+
+				 
+
+				
